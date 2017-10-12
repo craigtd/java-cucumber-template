@@ -3,6 +3,7 @@ Feature: Google search
   I want to be able to search by phrase
   So that I can find web pages related to provided phrase
 
+  @smoke
   Scenario Outline: Google search
     Given I'm on google.co.uk main page
     When I enter search phrase <searchPhrase>
