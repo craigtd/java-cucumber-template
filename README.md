@@ -7,6 +7,6 @@ To run tests use the following command:
 
 `mvn test`
 
-Cucumnber options can be passed as a parameter, such as
+Cucumber options can be passed as a parameter, such as
 
 `mvn test -Dcucumber.options="--tags @smoke"`
