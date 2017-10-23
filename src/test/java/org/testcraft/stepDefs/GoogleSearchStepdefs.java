@@ -1,8 +1,8 @@
 package org.testcraft.stepDefs;
 
 import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import cucumber.api.java.en.Then;
 import org.openqa.selenium.WebDriver;
 
 public class GoogleSearchStepdefs {
@@ -14,8 +14,9 @@ public class GoogleSearchStepdefs {
     }
 
     @Given("^I'm on google\\.co\\.uk main page$")
-    public void openGoogleMainPage() {
+    public void openGoogleMainPage() throws Throwable {
         driver.get("http://www.google.co.uk");
+        Thread.sleep(5000);
     }
 
 }
