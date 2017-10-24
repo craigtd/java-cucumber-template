@@ -4,7 +4,7 @@ Feature: Plan Journey
   I want to plan my journey
   So that I know what time I will Depart and Arrive and how much the journey will cost
 
-  @smoke
+  @exercise1
   Scenario: Plan journey - list times and prices
     Given I'm on trainline.com main page
     When I enter origin "Brighton" and destination "London"
