@@ -4,16 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
-public class GooglePage {
-
-    private final WebDriver driver;
-    private final WebDriverWait wait;
+public class GooglePage extends AbstractPage {
 
     private static final String URL = "https://www.google.co.uk";
 
@@ -28,11 +23,8 @@ public class GooglePage {
 
 
     public GooglePage(final WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
-        this.wait = new WebDriverWait(driver, 5);
+        super(driver);
     }
-
 
     public void goTo() {
         this.driver.get(URL);
@@ -41,7 +33,7 @@ public class GooglePage {
     public void searchFor(String criteria) {
         this.searchBox.sendKeys(criteria);
         wait.until(ExpectedConditions.elementToBeClickable(this.searchButton));
-        // If we wish to submit the form. WebDriver will find the form for us from the element searchBox
+        // Alternative: If we wish to submit the form, WebDriver can find the form for us directly from the searchBox element
         // this.searchBox.submit();
         this.searchButton.click();
         wait.until(ExpectedConditions.presenceOfElementLocated(By.className("rc")));
@@ -51,8 +43,5 @@ public class GooglePage {
         return this.searchResults;
     }
 
-    public void quit() {
-        this.driver.quit();
-    }
 
 }
