@@ -11,5 +11,5 @@ Feature: Google search
     Then Link <link> should be displayed as first one
 
   Examples:
-  | searchPhrase   | link                        |
-  | "google co uk" | "https://www.google.co.uk/" |
+    | searchPhrase   | link                        |
+    | "google co uk" | "https://www.google.co.uk/" |
