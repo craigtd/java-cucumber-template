@@ -1,4 +1,4 @@
-package org.testcraft.runner;
+package uk.co.testcraft.runner;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
@@ -8,6 +8,6 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = {"src/test/resources/features"},
         plugin = {"pretty", "html:target/cucumber"},
-        glue = {"org.testcraft.stepDefs"})
+        glue = {"uk.co.testcraft.stepDefs"})
 public class RunCukesTest {
 }

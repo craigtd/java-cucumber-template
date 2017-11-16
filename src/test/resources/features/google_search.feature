@@ -10,6 +10,6 @@ Feature: Google search
     And I click search
     Then Link <link> should be displayed as first one
 
-    Examples:
-      | searchPhrase   | link                        |
-      | "google co uk" | "https://www.google.co.uk/" |
+  Examples:
+  | searchPhrase   | link                        |
+  | "google co uk" | "https://www.google.co.uk/" |
