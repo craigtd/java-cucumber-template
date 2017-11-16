@@ -10,10 +10,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
-public class GoogleHomePage {
+public class GooglePage {
 
     private final WebDriver driver;
     private final WebDriverWait wait;
+
+    private static final String URL = "https://www.google.co.uk";
 
     @FindBy(name = "q")
     private WebElement searchBox;
@@ -25,21 +27,22 @@ public class GoogleHomePage {
     private List<WebElement> searchResults;
 
 
-    public GoogleHomePage(final WebDriver driver) {
+    public GooglePage(final WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
         this.wait = new WebDriverWait(driver, 5);
     }
 
+
     public void goTo() {
-        this.driver.get("https://www.google.com");
+        this.driver.get(URL);
     }
 
     public void searchFor(String criteria) {
         this.searchBox.sendKeys(criteria);
         wait.until(ExpectedConditions.elementToBeClickable(this.searchButton));
-        // Now submit the form. WebDriver will find the form for us from the element searchBox
-//        this.searchBox.submit();
+        // If we wish to submit the form. WebDriver will find the form for us from the element searchBox
+        // this.searchBox.submit();
         this.searchButton.click();
         wait.until(ExpectedConditions.presenceOfElementLocated(By.className("rc")));
     }
@@ -51,4 +54,5 @@ public class GoogleHomePage {
     public void quit() {
         this.driver.quit();
     }
+
 }
